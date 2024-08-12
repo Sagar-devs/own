@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="containerAll">
+        <div class="smallMessage">
+            <p>You may think I'm nothing to you, just click the button below</p>
+            <button class="button-89" role="button" id="revealMessage">Life without you</button>
+            
+        </div>
+    </div>
+    <div class="lifeWithOutYou">
+        <p>This is my life without you ra</p>
+        <p>Love you ra pandi 💛</p>
+        <div class="lifepara">
+            <p>Click below to see my life with you</p>
+            <button class="button-9" id="revealLifeWithYou">Life with you</button>
+        </div>
+    </div>
+    <div class="lifeWithYou">
+        <p>This is my life when you're beside me
+            <br>
+            So never live me alone ra
+        </p>
+    </div>
+    <script>
+        document.getElementById('revealMessage').addEventListener('click', function() {
+            document.querySelector('.smallMessage').style.display = 'none';
+            const lifeWithOutYou = document.querySelector('.lifeWithOutYou');
+            lifeWithOutYou.style.display = 'block';
+            lifeWithOutYou.classList.add('fade-in');
+        });
+
+        document.getElementById('revealLifeWithYou').addEventListener('click', function() {
+            const lifeWithOutYou = document.querySelector('.lifeWithOutYou');
+            lifeWithOutYou.classList.add('fade-out');
+            setTimeout(() => {
+                lifeWithOutYou.style.display = 'none';
+                document.querySelector('.lifeWithYou').style.display = 'block';
+                document.querySelector('.lifeWithYou').classList.add('fade-in');
+            }, 1000); // Match this timeout with the fade-out duration
+        });
+
+        document.getElementById('backToLifeWithoutYou').addEventListener('click', function() {
+            const lifeWithYou = document.querySelector('.lifeWithYou');
+            lifeWithYou.classList.add('fade-out');
+            setTimeout(() => {
+                lifeWithYou.style.display = 'none';
+                const lifeWithOutYou = document.querySelector('.lifeWithOutYou');
+                lifeWithOutYou.style.display = 'block';
+                lifeWithOutYou.classList.add('fade-in');
+            }, 1000); // Match this timeout with the fade-out duration
+        });
+    </script>
+</body>
+</html>
